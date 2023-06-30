@@ -21,11 +21,12 @@
 
 | 概要 | Column名 | 型 | その他 |
 | :-- | :-- | :-- | :-- |
+| 作成日時 | created_time | datetime |  |
 | 作成者 | created_by | int | FK：members.member_id |
-| 作成日時 | created_user | datetime |  |
+| 作成ページID | created_page_id | char(2) |  |
+| 更新日時 | updated_time | datetime |  |
 | 更新者 | updated_by | int | FK：members.member_id |
-| 更新日時 | updated_user | datetime |  |
-| ページID | page_id | char(2) |  |
+| 更新ページID | updated_page_id | char(2) |  |
 
 ## 2.1. members：メンバーマスタ
 
