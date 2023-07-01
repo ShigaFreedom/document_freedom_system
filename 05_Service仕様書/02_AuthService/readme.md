@@ -55,8 +55,8 @@
 
 ### 2.2.1. ① データ取得
 - 下記条件でデータを取得する
-[members].[member_id] = userId
-[members].[password] = password
+  - [members].[member_id] = userId
+  - [members].[password] = password
 
 ### 2.2.2. ③ エラー終了を返却
 - 下記エラーで返却する
@@ -110,9 +110,9 @@
 
 ### 3.2.1. ① データ取得
 - 下記条件でデータを取得する
-[system_sessions].[session] = inパラメータ.session
-[system_sessions].[expired] <= 本日日付
-[members].[member_id] = [system_sessions].[member_id]
+  - [system_sessions].[session] = inパラメータ.session
+  - [system_sessions].[expired] <= 本日日付
+  - [members].[member_id] = [system_sessions].[member_id]
 
 ### 3.2.2. ③ エラー終了を返却
 - 下記エラーで返却する
@@ -152,8 +152,8 @@
 
 ### 4.2.1. ① データ取得
 - 下記条件でデータを取得する
-[members].[member_id] = userId
-[members].[password] = prePassword
+  - [members].[member_id] = userId
+  - [members].[password] = prePassword
 
 ### 4.2.2. ③ エラー終了を返却
 - 下記エラーで返却する
@@ -172,13 +172,16 @@
 | errorCode | "Auth06" |
 
 ### 4.2.3. ⑥ パスワード更新
-- ①の条件で下記情報を更新
-[members].[password] = aftPassword
-[members].[is_initial_password] = true
+- ①の条件で[members]を更新
+
+| key | value |
+| :--: | :-- |
+| password | inパラメータ.aftPassword |
+| is_initial_password | false |
 
 ### ⑦ セッション更新
 1. 下記条件で[system_sessions]からすべて削除する
-[system_sessions].[member_id] = inパラメータ.userId
+  - [system_sessions].[member_id] = inパラメータ.userId
 2. 下記データを[system_sessions]に挿入
 
 | key | value |
