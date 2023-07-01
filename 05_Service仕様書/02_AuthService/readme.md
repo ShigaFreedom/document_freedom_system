@@ -174,6 +174,7 @@
 ### 4.2.3. ⑥ パスワード更新
 - ①の条件で下記情報を更新
 [members].[password] = aftPassword
+[members].[is_initial_password] = true
 
 ### ⑦ セッション更新
 1. 下記条件で[system_sessions]からすべて削除する
