@@ -138,7 +138,6 @@
 | Key | Value | その他 |
 | :--: | :-- | :-- |
 | userId | ユーザID | |
-| session | セッション情報 | nullも可能 |
 | prePassword | 変更前パスワード | SHA256でハッシュ化しておく |
 | aftPassword | 変更後パスワード | SHA256でハッシュ化しておく |
 
