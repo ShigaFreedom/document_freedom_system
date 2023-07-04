@@ -7,11 +7,16 @@
   - [2.2. schedules：予定マスタ](#22-schedules予定マスタ)
     - [2.2.1. 活動区分:active\_category](#221-活動区分active_category)
       - [2.2.1.1. データ定義](#2211-データ定義)
+    - [2.2.2. 状態:state](#222-状態state)
+      - [2.2.2.1. データ定義](#2221-データ定義)
   - [2.3. remind\_input\_schedule\_infos：予定入力催促情報](#23-remind_input_schedule_infos予定入力催促情報)
     - [2.3.1. 送信区分:send\_category](#231-送信区分send_category)
       - [2.3.1.1. データ定義](#2311-データ定義)
   - [2.4. group\_line\_infos：グループライン情報](#24-group_line_infosグループライン情報)
     - [2.4.1. LINE ID(PK):line\_id](#241-line-idpkline_id)
+  - [2.5. send\_line\_messages：LINE送信](#25-send_line_messagesline送信)
+    - [2.5.1. 送信区分:send\_category](#251-送信区分send_category)
+      - [2.5.1.1. データ定義](#2511-データ定義)
 - [3. その他](#3-その他)
 
 # 1. ER図
@@ -56,6 +61,17 @@
 | 4 | 市大会・市リーグ戦 |  |
 | 9 | その他 |  |
 
+### 2.2.2. 状態:state
+- そのスケジュールの現在状態を示す
+
+#### 2.2.2.1. データ定義
+
+| 区分 | 概要 | その他 |
+| :--: | :-- | :-- |
+| 0 | 未実施 |  |
+| 10 | 実施完了 | 練習や練習試合が無事実施された |
+| 11 | 中止 | 雨天中止などで実施できなかった |
+
 ## 2.3. remind_input_schedule_infos：予定入力催促情報
 
 ### 2.3.1. 送信区分:send_category
@@ -76,6 +92,19 @@
 | 区分 | 概要 | その他 |
 | :--: | :-- | :-- |
 | 01 | 全体グループ |  |
+| 02 | 連絡係向け | スケジュールの連絡のリマインダーに使用 |
+| 03 | HP更新係向け | HPの更新作業のリマインダーややり取りに使用 |
+
+## 2.5. send_line_messages：LINE送信
+### 2.5.1. 送信区分:send_category
+#### 2.5.1.1. データ定義
+
+| 区分 | 概要 | その他 |
+| :--: | :-- | :-- |
+| 1 | 試合結果リマインダー |  |
 
 # 3. その他
 - SpreadSheetを使用して、擬似的にテーブルを作成
+  - 中平が作成した下記システムを使用
+  - https://github.com/n-daira/SpreadSheetDatabaseSystem
+  - private設定なので、中平に権限を追加してもらわないといけない
