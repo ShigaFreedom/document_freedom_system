@@ -71,7 +71,7 @@
 | activeCategory | 活動区分 | [データ定義参照](../../03_テーブル/readme.md#221-活動区分active_category) |
 | additionalInfo | 追加情報 |  |
 | sendDate | 送信日 | "yyyy-MM-dd"形式で設定する |
-| other | 活動区分 | その他送信補足 |
+| other | その他送信補足 |  |
 | userId | メンバーID | |
 | pageId | ページID |  |
 
