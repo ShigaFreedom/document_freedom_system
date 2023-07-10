@@ -17,7 +17,7 @@
     - [4.1.1. INパラメータ](#411-inパラメータ)
     - [4.1.2. OUTパラメータ](#412-outパラメータ)
   - [4.2. 処理フロー](#42-処理フロー)
-- [5. カード作成：CreateCard](#5-カード作成createcard)
+- [5. カード作成：createCard](#5-カード作成createcard)
   - [5.1. IF定義](#51-if定義)
     - [5.1.1. INパラメータ](#511-inパラメータ)
     - [5.1.2. OUTパラメータ](#512-outパラメータ)
@@ -104,10 +104,10 @@
 ## 4.2. 処理フロー
 1. MemberService.getMember()からtrelloMemberNameを取得
 2. 下記URLをGetで叩く
-  - https://api.trello.com/1/members/[1.のtrelloMemberName]?key=[key]&token=[token]
+  - https://api.trello.com/1/members/[1.のtrelloMemberName]?key=[key]&token=[token]&fields=name
 3. 取得したデータからidを返却する
 
-# 5. カード作成：CreateCard
+# 5. カード作成：createCard
 - カードを作成する
 - [公式ドキュメント参照](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/#api-cards-post)
 
@@ -128,10 +128,11 @@
 ## 5.2. 処理フロー
 1. [TrelloService.getLists()]()からリスト一覧を取得し、name = INパラメータ.listNameと一致するデータからidを取得
   - INパラメータ.listNameがnullの場合は'未設定'と一致するデータを取得
-2. INパラメータ.memberIDがnull以外の場合、TrelloService.getMemberId()からidを取得
+2. INパラメータ.memberIDがnull以外の場合、[TrelloService.getMemberId()](#4-メンバーid取得getmemberid)からidを取得
 3. 下記URLをPOSTで叩く
   - https://api.trello.com/1/cards
   - 以下パラメータ
+
 | key | value |
 | :--: | :-- |
 | idList | 1.のid(必須) |
