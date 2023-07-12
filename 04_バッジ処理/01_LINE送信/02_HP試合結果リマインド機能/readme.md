@@ -41,4 +41,4 @@
 | Key | Value | その他 |
 | :--: | :-- | :-- |
 | lineId | "03"(HP更新係向け) | [データ定義参照](../../../03_テーブル/readme.md#2411-データ定義) |
-| message | 本日の試合結果の更新をお願いします。\n<br>タイトル：[Trelloのタイトル]\n<br>期限:[Trelloの期限]\n<br>url：2-2. のshortUrl |  |
+| message | 本日の試合結果の更新をお願いします。\n<br>タイトル：[Trelloのタイトル]\n<br>期限:[Trelloの期限]\n<br>url：2-2. のshortUrl | 1. で取得したcategoryが"3"(大会)なら末尾に下記追加<br>"※本日は大会だったため、本日中に更新をお願いします。" |
